@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denzel Marunda | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #1A1A1A;
+            --secondary-bg: #2C2C2C;
+            --text-color: #E0E0E0;
+            --accent-color: #00ADB5;
+            --card-bg: #2C2C2C;
+            --card-hover-bg: #3E3E3E;
+            --border-color: #444444;
+            --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--accent-color);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-bg);
+            background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M5 0h1L0 6V5zm1 6v-1L1 0h1z"/%3E%3C/g%3E%3C/svg%3E');
+            padding: 3rem;
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+       .profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;      /* makes it a circle */
+  object-fit: cover;       /* ensures it fills the circle */
+  object-position: center; /* keeps the image centered */
+  border: 4px solid var(--accent-color);
+  margin-bottom: 1.5rem;
+  display: block;          /* removes inline gaps */
+}
+
+
+        header h1 {
+            font-size: 3rem;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            background-color: var(--card-hover-bg);
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card a {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .project-card a:hover {
+            background: #fff;
+        }
+
+        /* Skills */
+        .skills-container {
+            text-align: center;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill {
+            background: var(--card-bg);
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--accent-color);
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+            background: var(--accent-color);
+            color: var(--primary-bg);
+        }
+
+        /* About */
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        /* Contact */
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .email {background-color: #D44638;} /* Google Red */
+        .whatsapp {background-color: #25D366;} /* WhatsApp Green */
+        .github {background-color: #161B22;} /* GitHub Dark */
+
+        footer {
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 2px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="marunda.png" alt="Denzel Marunda" class="profile-img">
+            <h1>Denzel Marunda</h1>
+            <p>Web Developer | UI/UX Designer | Innovator</p>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+                I am a passionate web developer dedicated to building modern, responsive, and user-friendly websites. 
+                From fashion showcases to job platforms and gym management systems, I design solutions that solve real problems 
+                and deliver excellent user experiences. I thrive on learning new technologies and bringing creative ideas to life through code.
+            </p>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="skills-container">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill">HTML5</span>
+                <span class="skill">CSS3</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">Firebase</span>
+                <span class="skill">UI/UX Design</span>
+                <span class="skill">Responsive Design</span>
+                <span class="skill">Git & GitHub</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>BluoneSpec Gym</h3>
+                <p>A modern private gym booking system with real-time slot management.</p>
+                <a href="https://bluonespecgym.netlify.app" target="_blank">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>BluoneSpec</h3>
+                <p>Showcasing web, design, and finance services we provide.</p>
+                <a href="https://bluonespec.netlify.app" target="_blank">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>BluoneSpec Developers</h3>
+                <p>Developer showcase platform for our tech solutions.</p>
+                <a href="https://bluonespecdevelopers.netlify.app" target="_blank">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Bluone Jobs</h3>
+                <p>Job searching and matching platform.</p>
+                <a href="https://bluonejobs.netlify.app" target="_blank">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Marunda Designs</h3>
+                <p>Fashion clothing showcase with interactive galleries.</p>
+                <a href="https://marundadesigns.netlify.app" target="_blank">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>My Portfolio (This Site)</h3>
+                <p>A minimalist portfolio to showcase my web development skills.</p>
+                <a href="#" target="_blank">View Code</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact-content">
+            <h2>Contact</h2>
+            <p>Let's connect and build something great together!</p>
+            <div class="contact-links">
+                <a href="mailto:denzelmarunda11@gmail.com" class="email">Email Me</a>
+               <a href="https://wa.me/254795870136" target="_blank" class="whatsapp">WhatsApp</a>
+  <a href="https://github.com/arshbone" target="_blank" class="github">GitHub</a> </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Denzel Marunda | Designed and Built with ❤️</p>
+    </footer>
+
+</body>
+</html>
