@@ -51,7 +51,7 @@
 
         .bg-layer {
             position: absolute;
-            inset: -5%; /* slight overshoot to hide edges during fades */
+            inset: -5%;
             opacity: 0;
             transition: opacity 1.2s ease;
             will-change: opacity;
@@ -80,32 +80,26 @@
 
         /* --- Each section's photo (Unsplash, free to use) --- */
 
-        /* Hero: dark coding / developer workspace vibe */
         .bg-layer[data-bg="hero"] {
             background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1920&q=80');
         }
 
-        /* About: abstract dark gradient with blue tones */
         .bg-layer[data-bg="about"] {
             background-image: url('https://images.unsplash.com/photo-1620207418302-439b387441b0?auto=format&fit=crop&w=1920&q=80');
         }
 
-        /* Strengths: dark tech / circuitry mood */
         .bg-layer[data-bg="strengths"] {
             background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80');
         }
 
-        /* Skills: abstract glowing gradient */
         .bg-layer[data-bg="skills"] {
             background-image: url('https://images.unsplash.com/photo-1490822180406-880c226c150b?auto=format&fit=crop&w=1920&q=80');
         }
 
-        /* Projects: dark workspace with screens */
         .bg-layer[data-bg="projects"] {
             background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1920&q=80');
         }
 
-        /* Contact: deep dark abstract close */
         .bg-layer[data-bg="contact"] {
             background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
         }
@@ -875,9 +869,10 @@
                 </div>
             </article>
 
+            <!-- UPDATED MEMORIALS PROJECT CARD -->
             <article class="project-card reveal">
                 <div class="project-preview-wrap">
-                    <img src="https://image.thum.io/get/width/800/crop/900/https://philip-eric-memorials.netlify.app" alt="Philip Eric Memorials Preview" class="project-preview" loading="lazy">
+                    <img src="memorials-preview.png" alt="Philip Eric Memorials Preview" class="project-preview" loading="lazy">
                 </div>
                 <div class="project-body">
                     <h3>Philip Eric Memorials</h3>
