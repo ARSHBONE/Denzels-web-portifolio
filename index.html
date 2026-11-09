@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Denzel Marunda | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-bg: #1A1A1A;
@@ -25,9 +25,16 @@
         }
 
         body {
-            background-color: var(--primary-bg);
             color: var(--text-color);
             line-height: 1.6;
+            background-color: #0f0f14;
+            background-image:
+                linear-gradient(135deg, rgba(10, 10, 15, 0.94) 0%, rgba(15, 15, 20, 0.88) 45%, rgba(0, 173, 181, 0.12) 100%),
+                url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
 
         section {
@@ -57,7 +64,9 @@
 
         /* Header */
         header {
-            background-color: var(--secondary-bg);
+            background-color: rgba(30, 30, 30, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M5 0h1L0 6V5zm1 6v-1L1 0h1z"/%3E%3C/g%3E%3C/svg%3E');
             padding: 3rem;
             text-align: center;
@@ -79,6 +88,7 @@
             border: 4px solid var(--accent-color);
             margin-bottom: 1.5rem;
             display: block;
+            box-shadow: 0 0 30px rgba(0, 173, 181, 0.5);
         }
 
         header h1 {
@@ -89,8 +99,96 @@
 
         header p {
             margin-top: 0.5rem;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-color);
+            font-weight: 500;
+        }
+
+        /* About */
+        .about-content {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-content strong {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* What I Bring */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .strength-card {
+            background-color: rgba(44, 44, 44, 0.9);
+            padding: 1.75rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .strength-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-color);
+        }
+
+        .strength-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .strength-card h3 {
+            color: var(--accent-color);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .strength-card p {
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
+        /* Skills */
+        .skills-container {
+            text-align: center;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill {
+            background: rgba(44, 44, 44, 0.9);
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--accent-color);
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+            background: var(--accent-color);
+            color: var(--primary-bg);
         }
 
         /* Projects Grid */
@@ -101,7 +199,7 @@
         }
 
         .project-card {
-            background-color: var(--card-bg);
+            background-color: rgba(44, 44, 44, 0.95);
             padding: 1.5rem;
             border-radius: 12px;
             box-shadow: var(--box-shadow);
@@ -116,7 +214,6 @@
             background-color: var(--card-hover-bg);
         }
 
-        /* NEW: Project Preview Image */
         .project-preview {
             width: 100%;
             height: 180px;
@@ -124,7 +221,7 @@
             border-radius: 8px;
             border: 1px solid var(--border-color);
             margin-bottom: 1.2rem;
-            background-color: #1a1a1a; /* fallback while loading */
+            background-color: #1a1a1a;
         }
 
         .project-card h3 {
@@ -137,7 +234,7 @@
             font-size: 1rem;
             color: var(--text-color);
             margin-bottom: 1.5rem;
-            flex-grow: 1; /* pushes button to bottom if descriptions vary */
+            flex-grow: 1;
         }
 
         .project-card a {
@@ -156,53 +253,15 @@
             background: #fff;
         }
 
-        /* Skills */
-        .skills-container {
-            text-align: center;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .skill {
-            background: var(--card-bg);
-            padding: 0.8rem 1.5rem;
-            border-radius: 20px;
-            border: 1px solid var(--accent-color);
-            color: var(--text-color);
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .skill:hover {
-            transform: scale(1.05);
-            background: var(--accent-color);
-            color: var(--primary-bg);
-        }
-
-        /* About */
-        .about-content {
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .about-content p {
-            font-size: 1.1rem;
-            color: var(--text-color);
-        }
-
         /* Contact */
         .contact-content {
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        .contact-content > p {
+            font-size: 1.1rem;
         }
 
         .contact-links {
@@ -231,16 +290,28 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .email {background-color: #D44638;}
-        .whatsapp {background-color: #25D366;}
-        .github {background-color: #161B22;}
+        .email { background-color: #D44638; }
+        .whatsapp { background-color: #25D366; }
+        .github { background-color: #161B22; }
 
         footer {
-            background-color: var(--secondary-bg);
+            background-color: rgba(30, 30, 30, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             color: var(--text-color);
             text-align: center;
             padding: 1.5rem;
             border-top: 2px solid var(--border-color);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+            }
+            header h1 { font-size: 2.2rem; }
+            h2 { font-size: 2rem; }
+            header { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
@@ -249,7 +320,7 @@
         <div class="header-content">
             <img src="marunda.png" alt="Denzel Marunda" class="profile-img">
             <h1>Denzel Marunda</h1>
-            <p>Web Developer | UI/UX Designer | Innovator</p>
+            <p>Junior Developer | React &amp; Next.js | TypeScript &amp; SQL | AI Enthusiast</p>
         </div>
     </header>
 
@@ -257,10 +328,47 @@
         <div class="about-content">
             <h2>About Me</h2>
             <p>
-                I am a passionate web developer dedicated to building modern, responsive, and user-friendly websites. 
-                From fashion showcases to job platforms and gym management systems, I design solutions that solve real problems 
-                and deliver excellent user experiences. I thrive on learning new technologies and bringing creative ideas to life through code.
+                I'm a <strong>curious and detail-oriented developer</strong> with a passion for building clean, functional solutions. 
+                I'm currently seeking a Junior Developer role where I can contribute my strong foundation in 
+                <strong>JavaScript, TypeScript, and SQL</strong>, alongside my hands-on experience with 
+                <strong>React, Next.js, and Supabase</strong>.
             </p>
+            <p>
+                Beyond writing code, I bring a keen eye for <strong>identifying and fixing bugs</strong>, a genuine love for 
+                <strong>developing and implementing new features</strong>, and a dedication to providing 
+                <strong>excellent technical support</strong> with thoroughly tested releases.
+            </p>
+            <p>
+                I'm particularly excited about the intersection of <strong>Artificial Intelligence and modern web development</strong>. 
+                As a proactive learner who keeps up with emerging technologies, I'm eager to bring fresh ideas to a forward-thinking 
+                team while continuing to grow my skills.
+            </p>
+        </div>
+    </section>
+
+    <section class="strengths">
+        <h2>What I Bring</h2>
+        <div class="strengths-grid">
+            <div class="strength-card">
+                <div class="strength-icon">🐛</div>
+                <h3>Bug Hunting</h3>
+                <p>Keen eye for identifying and squashing bugs before they reach users.</p>
+            </div>
+            <div class="strength-card">
+                <div class="strength-icon">🚀</div>
+                <h3>Feature Development</h3>
+                <p>From concept to deployment — building features that solve real problems.</p>
+            </div>
+            <div class="strength-card">
+                <div class="strength-icon">🛠️</div>
+                <h3>Technical Support</h3>
+                <p>Dedicated to helping users and teammates get the most out of software.</p>
+            </div>
+            <div class="strength-card">
+                <div class="strength-icon">✅</div>
+                <h3>Testing &amp; QA</h3>
+                <p>Ensuring every release is thoroughly tested and production-ready.</p>
+            </div>
         </div>
     </section>
 
@@ -271,12 +379,16 @@
                 <span class="skill">HTML5</span>
                 <span class="skill">CSS3</span>
                 <span class="skill">JavaScript</span>
+                <span class="skill">TypeScript</span>
                 <span class="skill">React</span>
+                <span class="skill">Next.js</span>
                 <span class="skill">Node.js</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Supabase</span>
                 <span class="skill">Firebase</span>
+                <span class="skill">Git &amp; GitHub</span>
                 <span class="skill">UI/UX Design</span>
                 <span class="skill">Responsive Design</span>
-                <span class="skill">Git & GitHub</span>
             </div>
         </div>
     </section>
@@ -285,7 +397,7 @@
         <h2>Projects</h2>
         <div class="projects-grid">
 
-            <!-- Zari (formerly Zaripro) -->
+            <!-- Zari -->
             <div class="project-card">
                 <img src="https://image.thum.io/get/width/600/crop/800/https://zari.co.ke" alt="Zari Preview" class="project-preview" loading="lazy">
                 <h3>Zari</h3>
@@ -299,14 +411,6 @@
                 <h3>Spin The Wheel App</h3>
                 <p>Interactive spinning wheel application for random selection, games, and decision-making.</p>
                 <a href="https://spin-the-wheel-app.netlify.app" target="_blank" rel="noopener">View Project</a>
-            </div>
-
-            <!-- Scintillating Portfolio -->
-            <div class="project-card">
-                <img src="https://image.thum.io/get/width/600/crop/800/https://scintillating-rugelach-acc6e2.netlify.app" alt="Scintillating Portfolio Preview" class="project-preview" loading="lazy">
-                <h3>Scintillating Portfolio</h3>
-                <p>A beautiful and modern personal portfolio website with smooth animations and clean design.</p>
-                <a href="https://scintillating-rugelach-acc6e2.netlify.app" target="_blank" rel="noopener">View Project</a>
             </div>
 
             <!-- Hokela AI Agent -->
