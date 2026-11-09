@@ -70,17 +70,16 @@
             align-items: center;
         }
 
-       .profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;      /* makes it a circle */
-  object-fit: cover;       /* ensures it fills the circle */
-  object-position: center; /* keeps the image centered */
-  border: 4px solid var(--accent-color);
-  margin-bottom: 1.5rem;
-  display: block;          /* removes inline gaps */
-}
-
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
 
         header h1 {
             font-size: 3rem;
@@ -103,16 +102,29 @@
 
         .project-card {
             background-color: var(--card-bg);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             box-shadow: var(--box-shadow);
             transition: transform 0.3s ease, background-color 0.3s ease;
             border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
             background-color: var(--card-hover-bg);
+        }
+
+        /* NEW: Project Preview Image */
+        .project-preview {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.2rem;
+            background-color: #1a1a1a; /* fallback while loading */
         }
 
         .project-card h3 {
@@ -125,6 +137,7 @@
             font-size: 1rem;
             color: var(--text-color);
             margin-bottom: 1.5rem;
+            flex-grow: 1; /* pushes button to bottom if descriptions vary */
         }
 
         .project-card a {
@@ -136,6 +149,7 @@
             border-radius: 8px;
             font-weight: 600;
             transition: background 0.3s ease;
+            text-align: center;
         }
 
         .project-card a:hover {
@@ -146,7 +160,7 @@
         .skills-container {
             text-align: center;
         }
-        
+
         .skills-list {
             display: flex;
             flex-wrap: wrap;
@@ -216,10 +230,10 @@
             transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
-        .email {background-color: #D44638;} /* Google Red */
-        .whatsapp {background-color: #25D366;} /* WhatsApp Green */
-        .github {background-color: #161B22;} /* GitHub Dark */
+
+        .email {background-color: #D44638;}
+        .whatsapp {background-color: #25D366;}
+        .github {background-color: #161B22;}
 
         footer {
             background-color: var(--secondary-bg);
@@ -270,74 +284,63 @@
     <section class="projects">
         <h2>Projects</h2>
         <div class="projects-grid">
-            <!-- Existing Projects -->
+
+            <!-- Zari (formerly Zaripro) -->
             <div class="project-card">
-                <h3>BluoneSpec Gym</h3>
-                <p>A modern private gym booking system with real-time slot management.</p>
-                <a href="https://bluonespecgym.netlify.app" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>BluoneSpec</h3>
-                <p>Showcasing web, design, and finance services we provide.</p>
-                <a href="https://bluonespec.netlify.app" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>BluoneSpec Developers</h3>
-                <p>Developer showcase platform for our tech solutions.</p>
-                <a href="https://bluonespecdevelopers.netlify.app" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>Bluone Jobs</h3>
-                <p>Job searching and matching platform.</p>
-                <a href="https://bluonejobs.netlify.app" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>Marunda Designs</h3>
-                <p>Fashion clothing showcase with interactive galleries.</p>
-                <a href="https://marundadesigns.netlify.app" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>My Portfolio (This Site)</h3>
-                <p>A minimalist portfolio to showcase my web development skills.</p>
-                <a href="#" target="_blank">View Code</a>
+                <img src="https://image.thum.io/get/width/600/crop/800/https://zari.co.ke" alt="Zari Preview" class="project-preview" loading="lazy">
+                <h3>Zari</h3>
+                <p>Complete business management system for East African shops — inventory, sales, debts, suppliers, and WhatsApp integration.</p>
+                <a href="https://zari.co.ke" target="_blank" rel="noopener">View Project</a>
             </div>
 
-            <!-- NEW PROJECTS ADDED FROM SCREENSHOT -->
+            <!-- Spin The Wheel App -->
             <div class="project-card">
-                <h3>Zaripro</h3>
-                <p>A platform to help you manage your shop and inventory efficiently.</p>
-                <a href="https://zaripro.netlify.app" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://spin-the-wheel-app.netlify.app" alt="Spin The Wheel App Preview" class="project-preview" loading="lazy">
                 <h3>Spin The Wheel App</h3>
-                <p>An interactive spinning wheel application for random selection.</p>
-                <a href="https://spin-the-wheel-app.netlify.app" target="_blank">View Project</a>
+                <p>Interactive spinning wheel application for random selection, games, and decision-making.</p>
+                <a href="https://spin-the-wheel-app.netlify.app" target="_blank" rel="noopener">View Project</a>
             </div>
+
+            <!-- Scintillating Portfolio -->
             <div class="project-card">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://scintillating-rugelach-acc6e2.netlify.app" alt="Scintillating Portfolio Preview" class="project-preview" loading="lazy">
                 <h3>Scintillating Portfolio</h3>
-                <p>A beautiful and modern personal portfolio website.</p>
-                <a href="https://scintillating-rugelach-acc6e2.netlify.app" target="_blank">View Project</a>
+                <p>A beautiful and modern personal portfolio website with smooth animations and clean design.</p>
+                <a href="https://scintillating-rugelach-acc6e2.netlify.app" target="_blank" rel="noopener">View Project</a>
             </div>
+
+            <!-- Hokela AI Agent -->
             <div class="project-card">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://hokelaaiagent.netlify.app" alt="Hokela AI Agent Preview" class="project-preview" loading="lazy">
                 <h3>Hokela AI Agent</h3>
-                <p>An AI-powered agent interface for automated interactions.</p>
-                <a href="https://hokelaaiagent.netlify.app" target="_blank">View Project</a>
+                <p>Autonomous AI agent for marketing location intelligence, weather analysis, and brand activation planning.</p>
+                <a href="https://hokelaaiagent.netlify.app" target="_blank" rel="noopener">View Project</a>
             </div>
+
+            <!-- Fast Free QR Code -->
             <div class="project-card">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://fastfreeqcode.netlify.app" alt="Fast Free QR Code Preview" class="project-preview" loading="lazy">
                 <h3>Fast Free QR Code</h3>
-                <p>Generate your QR codes instantly with this simple tool.</p>
-                <a href="https://fastfreeqcode.netlify.app" target="_blank">View Project</a>
+                <p>Instantly generate QR codes for links, text, or contact info — completely free and easy to use.</p>
+                <a href="https://fastfreeqcode.netlify.app" target="_blank" rel="noopener">View Project</a>
             </div>
+
+            <!-- Philip Eric Memorials -->
             <div class="project-card">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://philip-eric-memorials.netlify.app" alt="Philip Eric Memorials Preview" class="project-preview" loading="lazy">
                 <h3>Philip Eric Memorials</h3>
-                <p>A tribute and memorial website dedicated to Philip Eric.</p>
-                <a href="https://philip-eric-memorials.netlify.app" target="_blank">View Project</a>
+                <p>A touching memorial tribute website honoring the lives and memories of Philip and Eric.</p>
+                <a href="https://philip-eric-memorials.netlify.app" target="_blank" rel="noopener">View Project</a>
             </div>
+
+            <!-- Kiama's Portfolio -->
             <div class="project-card">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://kiamasportfolio.netlify.app" alt="Kiama's Portfolio Preview" class="project-preview" loading="lazy">
                 <h3>Kiama's Portfolio</h3>
-                <p>A personal portfolio website for Prince Peter Kiama.</p>
-                <a href="https://kiamasportfolio.netlify.app" target="_blank">View Project</a>
+                <p>Personal portfolio website for Prince Joel Kiama — a multidisciplinary creative in design, video, and photography.</p>
+                <a href="https://kiamasportfolio.netlify.app" target="_blank" rel="noopener">View Project</a>
             </div>
+
         </div>
     </section>
 
@@ -347,8 +350,9 @@
             <p>Let's connect and build something great together!</p>
             <div class="contact-links">
                 <a href="mailto:denzelmarunda11@gmail.com" class="email">Email Me</a>
-               <a href="https://wa.me/254795870136" target="_blank" class="whatsapp">WhatsApp</a>
-  <a href="https://github.com/arshbone" target="_blank" class="github">GitHub</a> </div>
+                <a href="https://wa.me/254795870136" target="_blank" class="whatsapp" rel="noopener">WhatsApp</a>
+                <a href="https://github.com/arshbone" target="_blank" class="github" rel="noopener">GitHub</a>
+            </div>
         </div>
     </section>
 
